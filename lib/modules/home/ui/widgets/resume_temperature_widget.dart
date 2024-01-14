@@ -21,7 +21,7 @@ class ResumeTemperatureWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset('assets/sunny.json'),
+            Lottie.asset('assets/rain_thunder.json'),
           ],
         ),
         Row(

@@ -16,10 +16,30 @@ class ForecastWidget extends StatelessWidget {
     required this.currentHour,
   });
 
+  final List<Map<String, dynamic>> indexData = [
+    {'id': 1, 'icon': 'cloudy', 'time': '10:00 AM', 'temperature' : '10'},
+    {'id': 2, 'icon': 'rain_thunder', 'time': '02:30 PM', 'temperature' : '12'},
+    {'id': 3, 'icon': 'sunny_and_rain', 'time': '05:45 PM', 'temperature' : '16'},
+    {'id': 4, 'icon': 'sunny_with_clouds', 'time': '08:15 PM', 'temperature' : '30'},
+  ];
+
   @override
   Widget build(BuildContext context) {
+
+    final List<Widget> _detailsForecastWidget = [];
+
+    indexData.forEach((element) {
+      _detailsForecastWidget.add(
+        DetailsForecastWidget(
+          currentTemperature: element['temperature'],
+          currrentIcon: element['icon'],
+          currentHour: element['time'],
+        ),
+      );
+    });
+
     return Container(
-      width: 256,
+      width: 324,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.lightBlueAccent[400]),
@@ -44,28 +64,7 @@ class ForecastWidget extends StatelessWidget {
             SizedBox(height: 14),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DetailsForecastWidget(
-                  currentTemperature: currentTemperature,
-                  currrentIcon: currrentIcon,
-                  currentHour: currentHour,
-                ),
-                DetailsForecastWidget(
-                  currentTemperature: currentTemperature,
-                  currrentIcon: currrentIcon,
-                  currentHour: currentHour,
-                ),
-                DetailsForecastWidget(
-                  currentTemperature: currentTemperature,
-                  currrentIcon: currrentIcon,
-                  currentHour: currentHour,
-                ),
-                DetailsForecastWidget(
-                  currentTemperature: currentTemperature,
-                  currrentIcon: currrentIcon,
-                  currentHour: currentHour,
-                ),
-              ],
+              children: _detailsForecastWidget
             ),
           ],
         ),
