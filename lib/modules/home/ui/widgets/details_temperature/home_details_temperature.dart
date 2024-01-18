@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailsTemperatureWidget extends StatelessWidget {
@@ -28,7 +29,7 @@ class HomeDetailsTemperatureWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.water_drop_outlined, color: Colors.white),
+                    Icon(CupertinoIcons.drop, color: Colors.white),
                     Text(
                       '$porcentRain%',
                       style: TextStyle(color: Colors.white),
@@ -41,9 +42,9 @@ class HomeDetailsTemperatureWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.water_drop_outlined, color: Colors.white),
+                    Icon(CupertinoIcons.thermometer, color: Colors.white),
                     Text(
-                      '$porcentRain%',
+                      '$porcentThing%',
                       style: TextStyle(color: Colors.white),
                     ),
                   ],
@@ -54,9 +55,9 @@ class HomeDetailsTemperatureWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.water_drop_outlined, color: Colors.white),
+                    Icon(CupertinoIcons.wind, color: Colors.white),
                     Text(
-                      '$porcentRain%',
+                      '$speedWind km/h',
                       style: TextStyle(color: Colors.white),
                     ),
                   ],
