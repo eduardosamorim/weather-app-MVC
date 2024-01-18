@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/modules/home/ui/widgets/next_forecast/home_details_next_forecast.dart';
 
 class HomeNextForecastWidget extends StatelessWidget {
   HomeNextForecastWidget({
     super.key,
   });
-
-  final List<Map<String, dynamic>> indexData = [
-    {'id': 1, 'icon': 'cloudy', 'time': '10:00 AM', 'temperature': '10'},
-    {'id': 2, 'icon': 'rain_thunder', 'time': '02:30 PM', 'temperature': '12'},
-    {
-      'id': 3,
-      'icon': 'sunny_and_rain',
-      'time': '05:45 PM',
-      'temperature': '16'
-    },
-    {
-      'id': 4,
-      'icon': 'sunny_with_clouds',
-      'time': '08:15 PM',
-      'temperature': '30'
-    },
-  ];
 
   final List<Map<String, dynamic>> nextForecastDate = [
     {
@@ -31,21 +15,21 @@ class HomeNextForecastWidget extends StatelessWidget {
       'max': '14'
     },
     {
-      'id': 1,
+      'id': 2,
       'description_day': 'Monday',
       'icon': 'rain_thunder',
       'min': '5',
       'max': '14'
     },
     {
-      'id': 1,
+      'id': 3,
       'description_day': 'Tuesday',
       'icon': 'sunny_with_clouds',
       'min': '16',
       'max': '20'
     },
     {
-      'id': 1,
+      'id': 4,
       'description_day': 'Wednesday',
       'icon': 'rain_thunder',
       'min': '09',
@@ -55,16 +39,29 @@ class HomeNextForecastWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _detailsNextForecastWidget = [];
+
+    nextForecastDate.forEach((value) {
+      _detailsNextForecastWidget.add(
+        HomeDetailsNextForecastWidget(
+          dayDescription: value['description_day'],
+          icon: value['icon'],
+          min: value['min'],
+          max: value['max'],
+        ),
+      );
+    });
+
     return Container(
       width: 324,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.lightBlue[600]),
-      child: const Padding(
+      child: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -72,10 +69,19 @@ class HomeNextForecastWidget extends StatelessWidget {
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
                 SizedBox(width: 10),
-                Icon(Icons.calendar_today_outlined),
+                Icon(
+                  Icons.calendar_today_outlined,
+                  color: Colors.white,
+                ),
               ],
             ),
-            SizedBox(height: 14),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: _detailsNextForecastWidget,
+              ),
+            )
           ],
         ),
       ),

@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weatherapp/modules/home/ui/widgets/home_details_forecast_widget.dart';
+import 'package:weatherapp/modules/home/ui/widgets/forecast/home_details_forecast_widget.dart';
 
 class HomeForecastWidget extends StatelessWidget {
   String currentDate;
-  String currentTemperature;
-  String currrentIcon;
-  String currentHour;
 
   HomeForecastWidget({
     super.key,
     required this.currentDate,
-    required this.currentTemperature,
-    required this.currrentIcon,
-    required this.currentHour,
   });
 
   final List<Map<String, dynamic>> indexData = [
@@ -37,12 +31,12 @@ class HomeForecastWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> _detailsForecastWidget = [];
 
-    indexData.forEach((element) {
+    indexData.forEach((value) {
       _detailsForecastWidget.add(
         HomeDetailsForecastWidget(
-          currentTemperature: element['temperature'],
-          currrentIcon: element['icon'],
-          currentHour: element['time'],
+          currentTemperature: value['temperature'],
+          currrentIcon: value['icon'],
+          currentHour: value['time'],
         ),
       );
     });
@@ -72,8 +66,9 @@ class HomeForecastWidget extends StatelessWidget {
             ),
             SizedBox(height: 14),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: _detailsForecastWidget),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: _detailsForecastWidget,
+            ),
           ],
         ),
       ),
