@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class DetailsForecastWidget extends StatelessWidget {
-  DetailsForecastWidget({
+class HomeDetailsForecastWidget extends StatelessWidget {
+  HomeDetailsForecastWidget({
     super.key,
     required this.currentTemperature,
     required this.currrentIcon,

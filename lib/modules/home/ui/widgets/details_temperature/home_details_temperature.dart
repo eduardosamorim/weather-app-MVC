@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DetailsTemperatureWidget extends StatelessWidget {
+class HomeDetailsTemperatureWidget extends StatelessWidget {
   String porcentRain;
   String porcentThing;
   String speedWind;
 
-  DetailsTemperatureWidget({
+  HomeDetailsTemperatureWidget({
     super.key,
     required this.porcentRain,
     required this.porcentThing,
@@ -18,7 +18,7 @@ class DetailsTemperatureWidget extends StatelessWidget {
       width: 324,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.lightBlueAccent[400]),
+          color: Colors.lightBlue[600]),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(

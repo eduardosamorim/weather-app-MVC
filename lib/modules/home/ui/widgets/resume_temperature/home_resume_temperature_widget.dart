@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class ResumeTemperatureWidget extends StatelessWidget {
+class HomeResumeTemperatureWidget extends StatelessWidget {
   String temperature;
   String min;
   String max;
 
-  ResumeTemperatureWidget({
+  HomeResumeTemperatureWidget({
     super.key,
     required this.temperature,
     required this.min,
