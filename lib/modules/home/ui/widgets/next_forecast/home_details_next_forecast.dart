@@ -21,26 +21,32 @@ class HomeDetailsNextForecastWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
-          children: [
-            Text(
-              '$dayDescriptionº',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+        Expanded(
+          child: Column(
+            children: [
+              Text(
+                '$dayDescriptionº',
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
         ),
-        Column(
-          children: [
-            Lottie.asset('assets/$icon.json', width: 24),
-          ],
+        Expanded(
+          child: Column(
+            children: [
+              Lottie.asset('assets/$icon.json', width: 24),
+            ],
+          ),
         ),
-        Column(
-          children: [
-            Text(
-              "$minº - $maxº",
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+        Expanded(
+          child: Column(
+            children: [
+              Text(
+                "$minº - $maxº",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ],
     );
