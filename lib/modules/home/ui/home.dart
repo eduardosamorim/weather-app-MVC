@@ -54,11 +54,11 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 20),
               HomeDetailsTemperatureWidget(
                   porcentRain: '18', porcentThing: '67', speedWind: '25'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               HomeForecastWidget(
                 currentDate: '12/01',
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               HomeNextForecastWidget(),
             ],
           ),

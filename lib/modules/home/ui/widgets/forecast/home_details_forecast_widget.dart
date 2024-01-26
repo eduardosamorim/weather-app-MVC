@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class HomeDetailsForecastWidget extends StatelessWidget {
+  final String currentTemperature;
+  final String currrentIcon;
+  final String currentHour;
+
   HomeDetailsForecastWidget({
     super.key,
     required this.currentTemperature,
     required this.currrentIcon,
     required this.currentHour,
   });
-
-  final String currentTemperature;
-  final String currrentIcon;
-  final String currentHour;
 
   @override
   Widget build(BuildContext context) {

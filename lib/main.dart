@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/core/service/service.dart';
 import 'package:weatherapp/modules/home/ui/home.dart';
 
 void main() {
@@ -21,3 +22,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
