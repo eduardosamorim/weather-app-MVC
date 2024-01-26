@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:weatherapp/modules/home/controller/home_controller.dart';
 import 'package:weatherapp/modules/home/ui/widgets/details_temperature/home_details_temperature.dart';
 import 'package:weatherapp/modules/home/ui/widgets/forecast/home_forecast_widget.dart';
 import 'package:weatherapp/modules/home/ui/widgets/next_forecast/home_next_forecast_widget.dart';
 import 'package:weatherapp/modules/home/ui/widgets/resume_temperature/home_resume_temperature_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeBody extends StatelessWidget {
+  late HomeController controller;
+   HomeBody({super.key}){
+    controller = Get.put(HomeController());
+  }
 
   @override
   Widget build(BuildContext context) {
