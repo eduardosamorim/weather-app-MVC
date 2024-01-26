@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 import 'package:weatherapp/core/service/service.dart';
+import 'package:weatherapp/model/weather_model.dart';
 
 class HomeController extends GetxController{
   WeatherService service = WeatherService();
-  var result;
+  var currentWeather = WeatherModel().obs;
   @override
   void onInit() async{
-    result = await service.getWeatherService('curitiba');
-    print('duduzinho');
+    currentWeather.value = await service.getWeatherService('curitiba');
     super.onInit();
   }
 

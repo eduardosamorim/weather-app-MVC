@@ -14,15 +14,182 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+WeatherModelResponse _$WeatherModelResponseFromJson(Map<String, dynamic> json) {
+  return _WeatherModelResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$WeatherModelResponse {
+  WeatherModel? get location => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WeatherModelResponseCopyWith<WeatherModelResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WeatherModelResponseCopyWith<$Res> {
+  factory $WeatherModelResponseCopyWith(WeatherModelResponse value,
+          $Res Function(WeatherModelResponse) then) =
+      _$WeatherModelResponseCopyWithImpl<$Res, WeatherModelResponse>;
+  @useResult
+  $Res call({WeatherModel? location});
+
+  $WeatherModelCopyWith<$Res>? get location;
+}
+
+/// @nodoc
+class _$WeatherModelResponseCopyWithImpl<$Res,
+        $Val extends WeatherModelResponse>
+    implements $WeatherModelResponseCopyWith<$Res> {
+  _$WeatherModelResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(_value.copyWith(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as WeatherModel?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeatherModelCopyWith<$Res>? get location {
+    if (_value.location == null) {
+      return null;
+    }
+
+    return $WeatherModelCopyWith<$Res>(_value.location!, (value) {
+      return _then(_value.copyWith(location: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$WeatherModelResponseImplCopyWith<$Res>
+    implements $WeatherModelResponseCopyWith<$Res> {
+  factory _$$WeatherModelResponseImplCopyWith(_$WeatherModelResponseImpl value,
+          $Res Function(_$WeatherModelResponseImpl) then) =
+      __$$WeatherModelResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({WeatherModel? location});
+
+  @override
+  $WeatherModelCopyWith<$Res>? get location;
+}
+
+/// @nodoc
+class __$$WeatherModelResponseImplCopyWithImpl<$Res>
+    extends _$WeatherModelResponseCopyWithImpl<$Res, _$WeatherModelResponseImpl>
+    implements _$$WeatherModelResponseImplCopyWith<$Res> {
+  __$$WeatherModelResponseImplCopyWithImpl(_$WeatherModelResponseImpl _value,
+      $Res Function(_$WeatherModelResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(_$WeatherModelResponseImpl(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as WeatherModel?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$WeatherModelResponseImpl
+    with DiagnosticableTreeMixin
+    implements _WeatherModelResponse {
+  const _$WeatherModelResponseImpl({this.location});
+
+  factory _$WeatherModelResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeatherModelResponseImplFromJson(json);
+
+  @override
+  final WeatherModel? location;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WeatherModelResponse(location: $location)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WeatherModelResponse'))
+      ..add(DiagnosticsProperty('location', location));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WeatherModelResponseImpl &&
+            (identical(other.location, location) ||
+                other.location == location));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, location);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WeatherModelResponseImplCopyWith<_$WeatherModelResponseImpl>
+      get copyWith =>
+          __$$WeatherModelResponseImplCopyWithImpl<_$WeatherModelResponseImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$WeatherModelResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _WeatherModelResponse implements WeatherModelResponse {
+  const factory _WeatherModelResponse({final WeatherModel? location}) =
+      _$WeatherModelResponseImpl;
+
+  factory _WeatherModelResponse.fromJson(Map<String, dynamic> json) =
+      _$WeatherModelResponseImpl.fromJson;
+
+  @override
+  WeatherModel? get location;
+  @override
+  @JsonKey(ignore: true)
+  _$$WeatherModelResponseImplCopyWith<_$WeatherModelResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 WeatherModel _$WeatherModelFromJson(Map<String, dynamic> json) {
   return _WeatherModel.fromJson(json);
 }
 
 /// @nodoc
 mixin _$WeatherModel {
-  String? get firstName => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
-  int? get age => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +203,7 @@ abstract class $WeatherModelCopyWith<$Res> {
           WeatherModel value, $Res Function(WeatherModel) then) =
       _$WeatherModelCopyWithImpl<$Res, WeatherModel>;
   @useResult
-  $Res call({String? firstName, String? lastName, int? age});
+  $Res call({String? name, String? country});
 }
 
 /// @nodoc
@@ -52,23 +219,18 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? age = freezed,
+    Object? name = freezed,
+    Object? country = freezed,
   }) {
     return _then(_value.copyWith(
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      age: freezed == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -81,7 +243,7 @@ abstract class _$$WeatherModelImplCopyWith<$Res>
       __$$WeatherModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? firstName, String? lastName, int? age});
+  $Res call({String? name, String? country});
 }
 
 /// @nodoc
@@ -95,23 +257,18 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? age = freezed,
+    Object? name = freezed,
+    Object? country = freezed,
   }) {
     return _then(_$WeatherModelImpl(
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      age: freezed == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -119,21 +276,19 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$WeatherModelImpl with DiagnosticableTreeMixin implements _WeatherModel {
-  const _$WeatherModelImpl({this.firstName, this.lastName, this.age});
+  const _$WeatherModelImpl({this.name, this.country});
 
   factory _$WeatherModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherModelImplFromJson(json);
 
   @override
-  final String? firstName;
+  final String? name;
   @override
-  final String? lastName;
-  @override
-  final int? age;
+  final String? country;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherModel(firstName: $firstName, lastName: $lastName, age: $age)';
+    return 'WeatherModel(name: $name, country: $country)';
   }
 
   @override
@@ -141,9 +296,8 @@ class _$WeatherModelImpl with DiagnosticableTreeMixin implements _WeatherModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'WeatherModel'))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('age', age));
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('country', country));
   }
 
   @override
@@ -151,16 +305,13 @@ class _$WeatherModelImpl with DiagnosticableTreeMixin implements _WeatherModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherModelImpl &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.age, age) || other.age == age));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.country, country) || other.country == country));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, firstName, lastName, age);
+  int get hashCode => Object.hash(runtimeType, name, country);
 
   @JsonKey(ignore: true)
   @override
@@ -177,20 +328,16 @@ class _$WeatherModelImpl with DiagnosticableTreeMixin implements _WeatherModel {
 }
 
 abstract class _WeatherModel implements WeatherModel {
-  const factory _WeatherModel(
-      {final String? firstName,
-      final String? lastName,
-      final int? age}) = _$WeatherModelImpl;
+  const factory _WeatherModel({final String? name, final String? country}) =
+      _$WeatherModelImpl;
 
   factory _WeatherModel.fromJson(Map<String, dynamic> json) =
       _$WeatherModelImpl.fromJson;
 
   @override
-  String? get firstName;
+  String? get name;
   @override
-  String? get lastName;
-  @override
-  int? get age;
+  String? get country;
   @override
   @JsonKey(ignore: true)
   _$$WeatherModelImplCopyWith<_$WeatherModelImpl> get copyWith =>

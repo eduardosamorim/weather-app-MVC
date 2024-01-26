@@ -6,13 +6,23 @@ part 'weather_model.freezed.dart';
 part 'weather_model.g.dart';
 
 @freezed
+class WeatherModelResponse with _$WeatherModelResponse {
+  const factory WeatherModelResponse({
+    WeatherModel? location,
+  }) = _WeatherModelResponse;
+
+  factory WeatherModelResponse.fromJson(Map<String, Object?> json)
+  => _$WeatherModelResponseFromJson(json);
+}
+
+@freezed
 class WeatherModel with _$WeatherModel {
   const factory WeatherModel({
-     String? firstName,
-     String? lastName,
-     int? age,
+     String? name,
+     String? country,
   }) = _WeatherModel;
 
   factory WeatherModel.fromJson(Map<String, Object?> json)
   => _$WeatherModelFromJson(json);
 }
+
