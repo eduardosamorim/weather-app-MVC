@@ -9,20 +9,66 @@ part 'weather_model.g.dart';
 class WeatherModelResponse with _$WeatherModelResponse {
   const factory WeatherModelResponse({
     WeatherModel? location,
+    WeatherModelCurrent? current,
+    WeatherModelForecast? forecast,
   }) = _WeatherModelResponse;
 
-  factory WeatherModelResponse.fromJson(Map<String, Object?> json)
-  => _$WeatherModelResponseFromJson(json);
+  factory WeatherModelResponse.fromJson(Map<String, Object?> json) =>
+      _$WeatherModelResponseFromJson(json);
 }
 
 @freezed
 class WeatherModel with _$WeatherModel {
   const factory WeatherModel({
-     String? name,
-     String? country,
+    String? name,
+    String? country,
+    String? region,
   }) = _WeatherModel;
 
-  factory WeatherModel.fromJson(Map<String, Object?> json)
-  => _$WeatherModelFromJson(json);
+  factory WeatherModel.fromJson(Map<String, Object?> json) =>
+      _$WeatherModelFromJson(json);
 }
 
+@freezed
+class WeatherModelCurrent with _$WeatherModelCurrent {
+  const factory WeatherModelCurrent({
+    double? temp_c,
+    double? wind_kph,
+  }) = _WeatherModelCurrent;
+
+  factory WeatherModelCurrent.fromJson(Map<String, Object?> json) =>
+      _$WeatherModelCurrentFromJson(json);
+}
+
+@freezed
+class WeatherModelForecast with _$WeatherModelForecast {
+  const factory WeatherModelForecast({
+    List<WeatherDay>? date,
+    List<WeatherDay>? day,
+  }) = _WeatherModelForecast;
+
+  factory WeatherModelForecast.fromJson(Map<String, dynamic> json) =>
+      _$WeatherModelForecastFromJson(json);
+}
+
+@freezed
+class WeatherDay with _$WeatherDay {
+  const factory WeatherDay({
+    String? date,
+    WeatherDayDetails? details,
+  }) = _WeatherDay;
+
+  factory WeatherDay.fromJson(Map<String, dynamic> json) =>
+      _$WeatherDayFromJson(json);
+}
+
+@freezed
+class WeatherDayDetails with _$WeatherDayDetails {
+  const factory WeatherDayDetails({
+    double? maxtemp_c,
+    double? mintemp_c,
+  }) = _WeatherDayDetails;
+
+  factory WeatherDayDetails.fromJson(Map<String, dynamic> json) =>
+      _$WeatherDayDetailsFromJson(json);
+}

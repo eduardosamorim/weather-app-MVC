@@ -1,0 +1,38 @@
+[33mcommit 12459ffd77d118153ef5185350348a05605cdc73[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Eduardo <eduardoamorim855@gmail.com>
+Date:   Thu Jan 18 16:45:14 2024 -0300
+
+    Adjustment about icons at NextForecast widget
+
+ lib/modules/home/ui/home.dart                      | 64 [32m+++++++++++++[m[31m---------[m
+ .../ui/widgets/forecast/home_forecast_widget.dart  | 21 [32m+++[m[31m----[m
+ .../next_forecast/home_details_next_forecast.dart  | 48 [32m++++++++++++++++[m
+ .../next_forecast/home_next_forecast_widget.dart   | 54 [32m++++++++++[m[31m--------[m
+ 4 files changed, 125 insertions(+), 62 deletions(-)
+
+[33mcommit e0ac8afae0d2a4aa79f30ce6c13443a3a6896534[m
+Author: Eduardo <eduardoamorim855@gmail.com>
+Date:   Thu Jan 18 16:26:23 2024 -0300
+
+    add folders, change name of class and add widget NextForecast
+
+ .../home_details_temperature.dart}                 |  6 [32m+[m[31m-[m
+ .../home_details_forecast_widget.dart}             |  4 [32m+[m[31m-[m
+ .../home_forecast_widget.dart}                     | 34 [32m+++++[m[31m----[m
+ .../next_forecast/home_details_next_forecast.dart  |  0
+ .../next_forecast/home_next_forecast_widget.dart   | 84 [32m++++++++++++++++++++++[m
+ .../home_resume_temperature_widget.dart}           |  5 [32m+[m[31m-[m
+ 6 files changed, 112 insertions(+), 21 deletions(-)
+
+[33mcommit 98a211aa634a6531bb832cc30caac515dbac62e6[m
+Author: EduardosAmorim <eduardoamorim855@gmail.com>
+Date:   Sun Jan 14 19:31:44 2024 -0300
+
+    some adjustments
+
+ lib/modules/home/ui/home.dart                      | 70 [32m+++++++++++[m[31m-----------[m
+ .../home/ui/widgets/details_temperature.dart       |  2 [32m+[m[31m-[m
+ lib/modules/home/ui/widgets/forecast_widget.dart   | 45 [32m+++++++[m[31m-------[m
+ .../home/ui/widgets/resume_temperature_widget.dart |  2 [32m+[m[31m-[m
+ pubspec.lock                                       | 26 [32m++++[m[31m----[m
+ 5 files changed, 72 insertions(+), 73 deletions(-)
