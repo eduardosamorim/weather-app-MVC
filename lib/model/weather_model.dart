@@ -43,8 +43,7 @@ class WeatherModelCurrent with _$WeatherModelCurrent {
 @freezed
 class WeatherModelForecast with _$WeatherModelForecast {
   const factory WeatherModelForecast({
-    List<WeatherDay>? date,
-    List<WeatherDay>? day,
+    List<WeatherDay>? forecastday,
   }) = _WeatherModelForecast;
 
   factory WeatherModelForecast.fromJson(Map<String, dynamic> json) =>
@@ -55,7 +54,7 @@ class WeatherModelForecast with _$WeatherModelForecast {
 class WeatherDay with _$WeatherDay {
   const factory WeatherDay({
     String? date,
-    WeatherDayDetails? details,
+    WeatherDayDetails? day,
   }) = _WeatherDay;
 
   factory WeatherDay.fromJson(Map<String, dynamic> json) =>

@@ -610,8 +610,7 @@ WeatherModelForecast _$WeatherModelForecastFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WeatherModelForecast {
-  List<WeatherDay>? get date => throw _privateConstructorUsedError;
-  List<WeatherDay>? get day => throw _privateConstructorUsedError;
+  List<WeatherDay>? get forecastday => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -625,7 +624,7 @@ abstract class $WeatherModelForecastCopyWith<$Res> {
           $Res Function(WeatherModelForecast) then) =
       _$WeatherModelForecastCopyWithImpl<$Res, WeatherModelForecast>;
   @useResult
-  $Res call({List<WeatherDay>? date, List<WeatherDay>? day});
+  $Res call({List<WeatherDay>? forecastday});
 }
 
 /// @nodoc
@@ -642,17 +641,12 @@ class _$WeatherModelForecastCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = freezed,
-    Object? day = freezed,
+    Object? forecastday = freezed,
   }) {
     return _then(_value.copyWith(
-      date: freezed == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as List<WeatherDay>?,
-      day: freezed == day
-          ? _value.day
-          : day // ignore: cast_nullable_to_non_nullable
+      forecastday: freezed == forecastday
+          ? _value.forecastday
+          : forecastday // ignore: cast_nullable_to_non_nullable
               as List<WeatherDay>?,
     ) as $Val);
   }
@@ -666,7 +660,7 @@ abstract class _$$WeatherModelForecastImplCopyWith<$Res>
       __$$WeatherModelForecastImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<WeatherDay>? date, List<WeatherDay>? day});
+  $Res call({List<WeatherDay>? forecastday});
 }
 
 /// @nodoc
@@ -680,17 +674,12 @@ class __$$WeatherModelForecastImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = freezed,
-    Object? day = freezed,
+    Object? forecastday = freezed,
   }) {
     return _then(_$WeatherModelForecastImpl(
-      date: freezed == date
-          ? _value._date
-          : date // ignore: cast_nullable_to_non_nullable
-              as List<WeatherDay>?,
-      day: freezed == day
-          ? _value._day
-          : day // ignore: cast_nullable_to_non_nullable
+      forecastday: freezed == forecastday
+          ? _value._forecastday
+          : forecastday // ignore: cast_nullable_to_non_nullable
               as List<WeatherDay>?,
     ));
   }
@@ -701,37 +690,25 @@ class __$$WeatherModelForecastImplCopyWithImpl<$Res>
 class _$WeatherModelForecastImpl
     with DiagnosticableTreeMixin
     implements _WeatherModelForecast {
-  const _$WeatherModelForecastImpl(
-      {final List<WeatherDay>? date, final List<WeatherDay>? day})
-      : _date = date,
-        _day = day;
+  const _$WeatherModelForecastImpl({final List<WeatherDay>? forecastday})
+      : _forecastday = forecastday;
 
   factory _$WeatherModelForecastImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherModelForecastImplFromJson(json);
 
-  final List<WeatherDay>? _date;
+  final List<WeatherDay>? _forecastday;
   @override
-  List<WeatherDay>? get date {
-    final value = _date;
+  List<WeatherDay>? get forecastday {
+    final value = _forecastday;
     if (value == null) return null;
-    if (_date is EqualUnmodifiableListView) return _date;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<WeatherDay>? _day;
-  @override
-  List<WeatherDay>? get day {
-    final value = _day;
-    if (value == null) return null;
-    if (_day is EqualUnmodifiableListView) return _day;
+    if (_forecastday is EqualUnmodifiableListView) return _forecastday;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherModelForecast(date: $date, day: $day)';
+    return 'WeatherModelForecast(forecastday: $forecastday)';
   }
 
   @override
@@ -739,8 +716,7 @@ class _$WeatherModelForecastImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'WeatherModelForecast'))
-      ..add(DiagnosticsProperty('date', date))
-      ..add(DiagnosticsProperty('day', day));
+      ..add(DiagnosticsProperty('forecastday', forecastday));
   }
 
   @override
@@ -748,16 +724,14 @@ class _$WeatherModelForecastImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherModelForecastImpl &&
-            const DeepCollectionEquality().equals(other._date, _date) &&
-            const DeepCollectionEquality().equals(other._day, _day));
+            const DeepCollectionEquality()
+                .equals(other._forecastday, _forecastday));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_date),
-      const DeepCollectionEquality().hash(_day));
+      runtimeType, const DeepCollectionEquality().hash(_forecastday));
 
   @JsonKey(ignore: true)
   @override
@@ -776,17 +750,14 @@ class _$WeatherModelForecastImpl
 }
 
 abstract class _WeatherModelForecast implements WeatherModelForecast {
-  const factory _WeatherModelForecast(
-      {final List<WeatherDay>? date,
-      final List<WeatherDay>? day}) = _$WeatherModelForecastImpl;
+  const factory _WeatherModelForecast({final List<WeatherDay>? forecastday}) =
+      _$WeatherModelForecastImpl;
 
   factory _WeatherModelForecast.fromJson(Map<String, dynamic> json) =
       _$WeatherModelForecastImpl.fromJson;
 
   @override
-  List<WeatherDay>? get date;
-  @override
-  List<WeatherDay>? get day;
+  List<WeatherDay>? get forecastday;
   @override
   @JsonKey(ignore: true)
   _$$WeatherModelForecastImplCopyWith<_$WeatherModelForecastImpl>
@@ -800,7 +771,7 @@ WeatherDay _$WeatherDayFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$WeatherDay {
   String? get date => throw _privateConstructorUsedError;
-  WeatherDayDetails? get details => throw _privateConstructorUsedError;
+  WeatherDayDetails? get day => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -814,9 +785,9 @@ abstract class $WeatherDayCopyWith<$Res> {
           WeatherDay value, $Res Function(WeatherDay) then) =
       _$WeatherDayCopyWithImpl<$Res, WeatherDay>;
   @useResult
-  $Res call({String? date, WeatherDayDetails? details});
+  $Res call({String? date, WeatherDayDetails? day});
 
-  $WeatherDayDetailsCopyWith<$Res>? get details;
+  $WeatherDayDetailsCopyWith<$Res>? get day;
 }
 
 /// @nodoc
@@ -833,29 +804,29 @@ class _$WeatherDayCopyWithImpl<$Res, $Val extends WeatherDay>
   @override
   $Res call({
     Object? date = freezed,
-    Object? details = freezed,
+    Object? day = freezed,
   }) {
     return _then(_value.copyWith(
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String?,
-      details: freezed == details
-          ? _value.details
-          : details // ignore: cast_nullable_to_non_nullable
+      day: freezed == day
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
               as WeatherDayDetails?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $WeatherDayDetailsCopyWith<$Res>? get details {
-    if (_value.details == null) {
+  $WeatherDayDetailsCopyWith<$Res>? get day {
+    if (_value.day == null) {
       return null;
     }
 
-    return $WeatherDayDetailsCopyWith<$Res>(_value.details!, (value) {
-      return _then(_value.copyWith(details: value) as $Val);
+    return $WeatherDayDetailsCopyWith<$Res>(_value.day!, (value) {
+      return _then(_value.copyWith(day: value) as $Val);
     });
   }
 }
@@ -868,10 +839,10 @@ abstract class _$$WeatherDayImplCopyWith<$Res>
       __$$WeatherDayImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? date, WeatherDayDetails? details});
+  $Res call({String? date, WeatherDayDetails? day});
 
   @override
-  $WeatherDayDetailsCopyWith<$Res>? get details;
+  $WeatherDayDetailsCopyWith<$Res>? get day;
 }
 
 /// @nodoc
@@ -886,16 +857,16 @@ class __$$WeatherDayImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? date = freezed,
-    Object? details = freezed,
+    Object? day = freezed,
   }) {
     return _then(_$WeatherDayImpl(
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String?,
-      details: freezed == details
-          ? _value.details
-          : details // ignore: cast_nullable_to_non_nullable
+      day: freezed == day
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
               as WeatherDayDetails?,
     ));
   }
@@ -904,7 +875,7 @@ class __$$WeatherDayImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$WeatherDayImpl with DiagnosticableTreeMixin implements _WeatherDay {
-  const _$WeatherDayImpl({this.date, this.details});
+  const _$WeatherDayImpl({this.date, this.day});
 
   factory _$WeatherDayImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherDayImplFromJson(json);
@@ -912,11 +883,11 @@ class _$WeatherDayImpl with DiagnosticableTreeMixin implements _WeatherDay {
   @override
   final String? date;
   @override
-  final WeatherDayDetails? details;
+  final WeatherDayDetails? day;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'WeatherDay(date: $date, details: $details)';
+    return 'WeatherDay(date: $date, day: $day)';
   }
 
   @override
@@ -925,7 +896,7 @@ class _$WeatherDayImpl with DiagnosticableTreeMixin implements _WeatherDay {
     properties
       ..add(DiagnosticsProperty('type', 'WeatherDay'))
       ..add(DiagnosticsProperty('date', date))
-      ..add(DiagnosticsProperty('details', details));
+      ..add(DiagnosticsProperty('day', day));
   }
 
   @override
@@ -934,12 +905,12 @@ class _$WeatherDayImpl with DiagnosticableTreeMixin implements _WeatherDay {
         (other.runtimeType == runtimeType &&
             other is _$WeatherDayImpl &&
             (identical(other.date, date) || other.date == date) &&
-            (identical(other.details, details) || other.details == details));
+            (identical(other.day, day) || other.day == day));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, date, details);
+  int get hashCode => Object.hash(runtimeType, date, day);
 
   @JsonKey(ignore: true)
   @override
@@ -957,8 +928,7 @@ class _$WeatherDayImpl with DiagnosticableTreeMixin implements _WeatherDay {
 
 abstract class _WeatherDay implements WeatherDay {
   const factory _WeatherDay(
-      {final String? date,
-      final WeatherDayDetails? details}) = _$WeatherDayImpl;
+      {final String? date, final WeatherDayDetails? day}) = _$WeatherDayImpl;
 
   factory _WeatherDay.fromJson(Map<String, dynamic> json) =
       _$WeatherDayImpl.fromJson;
@@ -966,7 +936,7 @@ abstract class _WeatherDay implements WeatherDay {
   @override
   String? get date;
   @override
-  WeatherDayDetails? get details;
+  WeatherDayDetails? get day;
   @override
   @JsonKey(ignore: true)
   _$$WeatherDayImplCopyWith<_$WeatherDayImpl> get copyWith =>

@@ -61,10 +61,7 @@ Map<String, dynamic> _$$WeatherModelCurrentImplToJson(
 _$WeatherModelForecastImpl _$$WeatherModelForecastImplFromJson(
         Map<String, dynamic> json) =>
     _$WeatherModelForecastImpl(
-      date: (json['date'] as List<dynamic>?)
-          ?.map((e) => WeatherDay.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      day: (json['day'] as List<dynamic>?)
+      forecastday: (json['forecastday'] as List<dynamic>?)
           ?.map((e) => WeatherDay.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -72,22 +69,21 @@ _$WeatherModelForecastImpl _$$WeatherModelForecastImplFromJson(
 Map<String, dynamic> _$$WeatherModelForecastImplToJson(
         _$WeatherModelForecastImpl instance) =>
     <String, dynamic>{
-      'date': instance.date,
-      'day': instance.day,
+      'forecastday': instance.forecastday,
     };
 
 _$WeatherDayImpl _$$WeatherDayImplFromJson(Map<String, dynamic> json) =>
     _$WeatherDayImpl(
       date: json['date'] as String?,
-      details: json['details'] == null
+      day: json['day'] == null
           ? null
-          : WeatherDayDetails.fromJson(json['details'] as Map<String, dynamic>),
+          : WeatherDayDetails.fromJson(json['day'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$WeatherDayImplToJson(_$WeatherDayImpl instance) =>
     <String, dynamic>{
       'date': instance.date,
-      'details': instance.details,
+      'day': instance.day,
     };
 
 _$WeatherDayDetailsImpl _$$WeatherDayDetailsImplFromJson(

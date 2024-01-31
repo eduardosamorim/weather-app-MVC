@@ -3,6 +3,6 @@ class ApiUtil {
   static const String baseUrl = "https://api.weatherapi.com/v1/forecast";
 
   static Uri buildWeatherUri(String cityName) {
-    return Uri.parse('$baseUrl.json?key=$apiKey&q=$cityName');
+    return Uri.parse('$baseUrl.json?key=$apiKey&q=$cityName&days=5');
   }
 }
