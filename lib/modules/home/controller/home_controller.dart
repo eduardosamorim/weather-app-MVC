@@ -3,9 +3,14 @@ import 'package:weatherapp/core/service/service.dart';
 import 'package:weatherapp/model/weather_model.dart';
 
 class HomeController extends GetxController {
+  String city;
+
+  HomeController({
+    required this.city,
+  });
   WeatherService service = WeatherService();
 
-  var currentWeather = WeatherModel().obs;
+  var currentWeather =  WeatherModel().obs;
   @override
 
   void onInit() async {

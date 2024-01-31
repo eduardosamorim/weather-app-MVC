@@ -7,13 +7,21 @@ import 'package:weatherapp/modules/home/ui/widgets/next_forecast/home_next_forec
 import 'package:weatherapp/modules/home/ui/widgets/resume_temperature/home_resume_temperature_widget.dart';
 
 class HomeBody extends StatelessWidget {
+
   late HomeController controller;
+
+  String city = 'Curitiba';
+
    HomeBody({super.key}){
-    controller = Get.put(HomeController());
+    controller = Get.put(HomeController(city: city));
   }
+
 
   @override
   Widget build(BuildContext context) {
+    var teste = controller.currentWeather();
+
+
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
