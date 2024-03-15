@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:weatherapp/model/weather_model.dart';
 
@@ -7,14 +9,16 @@ class WeatherService {
   final WeatherRepository _weatherRepository =
       WeatherRepository(); // Create an instance
 
-  Future<WeatherModel> getWeatherService(String cityName) async {
+  Future<WeatherModelResponse> getWeatherService(String cityName) async {
     try {
       var response = await _weatherRepository.getWeatherRepository(cityName);
       WeatherModelResponse wResponse = WeatherModelResponse.fromJson(response);
-      return wResponse.location ?? const WeatherModel();
+
+      return wResponse;
     } catch (e) {
       debugPrint('WEATHER_SERVICE_ERROR:$e');
-      return const WeatherModel();
+      return Future.value(WeatherModel() as FutureOr<WeatherModelResponse>?);;
     }
   }
+
 }

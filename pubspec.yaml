@@ -43,6 +43,7 @@ dependencies:
 
   lottie: ^2.5.0
   http: ^1.1.0
+  geolocator: ^11.0.0
 
 dev_dependencies:
   flutter_test:
