@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weatherapp/core/util.dart';
 import 'package:weatherapp/modules/home/controller/home_controller.dart';
 import 'package:weatherapp/modules/home/ui/widgets/details_temperature/home_details_temperature.dart';
 import 'package:weatherapp/modules/home/ui/widgets/forecast/home_forecast_widget.dart';
@@ -22,8 +23,8 @@ class HomeBody extends StatelessWidget {
     var currentWeatherCurrent = currentWeather_.current;
 
     return Obx(
-      () => controller.isLoading == false
-          ? const CircularProgressIndicator()
+      () => controller.isLoading == true
+          ? const LoadingIndicator(size: 24)
           : Scaffold(
               backgroundColor: Colors.lightBlueAccent,
               appBar: AppBar(
@@ -34,13 +35,13 @@ class HomeBody extends StatelessWidget {
                       Icons.location_on_outlined,
                       color: Colors.white,
                     ),
-                    SizedBox(width: 12),
+                    const SizedBox(width: 12),
                     Text(
-                      currentWeatherLocation!.name.toString() ?? 'Error',
-                      style: TextStyle(color: Colors.white),
+                      currentWeatherLocation?.name ?? 'Loading',
+                      style: const TextStyle(color: Colors.white),
                     ),
-                    SizedBox(width: 12),
-                    Icon(
+                    const SizedBox(width: 12),
+                    const Icon(
                       Icons.keyboard_arrow_down_sharp,
                       color: Colors.white,
                     ),
@@ -67,7 +68,7 @@ class HomeBody extends StatelessWidget {
                         min: '10',
                         max: '34',
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       HomeDetailsTemperatureWidget(
                           porcentRain: '18',
                           porcentThing: '67',

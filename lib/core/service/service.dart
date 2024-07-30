@@ -17,8 +17,7 @@ class WeatherService {
       return wResponse;
     } catch (e) {
       debugPrint('WEATHER_SERVICE_ERROR:$e');
-      return Future.value(WeatherModel() as FutureOr<WeatherModelResponse>?);;
+      return Future.value(WeatherModel() as FutureOr<WeatherModelResponse>?);
     }
   }
-
 }

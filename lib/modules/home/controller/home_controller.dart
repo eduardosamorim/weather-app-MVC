@@ -4,20 +4,29 @@ import 'package:weatherapp/model/weather_model.dart';
 
 class HomeController extends GetxController {
   var city;
-  var isLoading = false.obs;
+  var isLoading = true.obs;
 
   HomeController({
     required this.city,
   });
+
   WeatherService service = WeatherService();
+  Rx<WeatherModelResponse> currentWeather = const WeatherModelResponse().obs;
 
-  Rx<WeatherModelResponse> currentWeather =  WeatherModelResponse().obs;
   @override
-
-  void onInit() async {
+  void onInit() {
     super.onInit();
-    currentWeather.value = await service.getWeatherService('curitiba'); // Assign to value
-    isLoading.value = true; // Add this variable
+    fetchWeather();
   }
 
+  void fetchWeather() async {
+    try {
+      currentWeather.value = await service.getWeatherService(city);
+    } catch (e) {
+      // Handle error
+      print('Error fetching weather: $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }
 }
